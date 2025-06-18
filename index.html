@@ -15,6 +15,22 @@
       href="https://fonts.googleapis.com/css2?family=Cairo:wght@400;600;700&display=swap"
       rel="stylesheet"
     />
+    <script>
+// حفظ gclid لو جاي من إعلان
+if (window.location.href.includes("gclid")) {
+  const urlParams = new URLSearchParams(window.location.search);
+  const gclid = urlParams.get("gclid");
+  if (gclid) localStorage.setItem("gclid", gclid);
+}
+
+// دالة عامة للتنقل لرابط منتج مع gclid
+function goToLink(productUrl) {
+  const gclid = localStorage.getItem("gclid");
+  const finalUrl = gclid ? `${productUrl}?gclid=${gclid}` : productUrl;
+  window.location.href = finalUrl;
+}
+</script>
+
   </head>
   <body>
     <!-- خلفية متحركة عامة -->
@@ -101,7 +117,7 @@
                 <li class="feature-item">الوصول إلى يوتيوب ميوزك</li>
               </ul>
 
-              <a href="https://dohmy.com/lvGjbrd" class="cta-button">
+              <a href="#" onclick="goToLink('https://dohmy.com/lvGjbrd')" class="cta-button">
                 اشترك الآن
               </a>
             </div>
@@ -147,7 +163,7 @@
                 <li class="feature-item">الوصول إلى يوتيوب ميوزك</li>
               </ul>
 
-              <a href="https://dohmy.com/xvARAwl" class="cta-button featured">
+              <a href="#" onclick="goToLink('https://dohmy.com/xvARAwl')" class="cta-button featured">
                 اشترك الآن
               </a>
             </div>
@@ -188,7 +204,7 @@
                 <li class="feature-item">الوصول إلى يوتيوب ميوزك</li>
               </ul>
 
-              <a href="https://dohmy.com/OyqNqee" class="cta-button">
+              <a href="#" onclick="goToLink('https://dohmy.com/OyqNqee')" class="cta-button">
                 اشترك الآن
               </a>
             </div>
@@ -238,7 +254,7 @@
                 
               </ul>
 
-              <a href="https://dohmy.com/QzdYxBR" class="cta-button premium">
+              <a href="#" onclick="goToLink('https://dohmy.com/QzdYxBR')" class="cta-button premium">
                 اشترك الآن
               </a>
             </div>
